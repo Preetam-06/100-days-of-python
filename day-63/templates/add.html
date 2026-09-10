@@ -1,18 +1,21 @@
-<!DOCTYPE html>
+
+
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Add Book</title>
+    
   </head>
   <body>
     <form action="" method="POST">
-      <label>Book Name</label>
-      <input type="text" />
-      <label>Book Author</label>
-      <input type="text" />
-      <label>Rating</label>
-      <input type="text" />
-      <button type="submit">Add Book</button>
+      {{form.hidden_tag()}}
+      {{form.title.label}} {{form.title()}}<br>
+      {{form.author.label}} {{form.author()}}<br>
+      {{form.ratings.label}} {{form.ratings()}}<br>
+      {{form.submit()}}
+      
     </form>
   </body>
 </html>
+

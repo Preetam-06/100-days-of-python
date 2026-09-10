@@ -6,10 +6,17 @@
   </head>
   <body>
     <h1>My Library</h1>
-    <ul>
-      <li></li>
-    </ul>
-
-    <a href="">Add New Book</a>
+    <p>Welcome to my library!</p>
+    {% if not books %}
+      <p>No books in the library yet.</p>
+    {%endif %}
+    {% for book in books %}
+      <ul>
+        <li>{{ book.title }} by {{ book.author }} - Rating: {{ book.ratings }}</li>
+      </ul>
+    
+    {% endfor %}
+    
+    <a href="{{ url_for('add') }}">Add New Book</a>
   </body>
 </html>
