@@ -34,7 +34,7 @@ class BookForm(FlaskForm):
 
 @app.route('/')
 def home():
-    result = db.session.execute(db.select(Book).order_by(Book.title))
+    result = db.session.execute(db.select(Book).order_by(Book.ratings))
     all_books = result.scalars().all()
     return render_template("index.html", books=all_books)
 
